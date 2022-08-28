@@ -22,7 +22,7 @@ print(f"The perimeter is {rect_width*2+rect_length*2} and the area is {rect_widt
 number1 = int(input("Input the first integer number: "))
 number2 = int(input("Input the second integer number: "))
 number3 = int(input("Input the third integer number: "))
-print(f"The sum is {number1 + number2 + number3}, the product is {number1*number2*number3} and the average is {number1*number2*number3/3}")
+print(f"The sum is {number1 + number2 + number3}, the product is {number1*number2*number3} and the average is {(number1+number2+number3)/3}")
 
 # Phase 5
 
