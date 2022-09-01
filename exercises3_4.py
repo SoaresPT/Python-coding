@@ -73,7 +73,7 @@ while True:
     if input_no == "":
         print(f"The smallest number was {smallest_no} and the biggest number was {highest_no}")
         break
-    # In case the user never types a number at the beginning we're going to exit out. Otherwise set them to the vars
+    # In case the user never types a number at the beginning we're going to exit out. Otherwise, set them to the vars
     if smallest_no is None and highest_no is None:
         smallest_no = float(input_no)
         highest_no = float(input_no)
