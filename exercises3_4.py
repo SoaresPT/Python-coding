@@ -116,14 +116,15 @@ while no_guesses < 5:
 
 # 4.6
 
-
 N = int(input("Type the amount of random points you want to generate: "))
 n = 0
 for i in range(N):
-    x = random.uniform(-1., 1.)
-    y = random.uniform(-1., 1.)
+    x = random.uniform(-1, 1)
+    y = random.uniform(-1, 1)
 
-    if x**2 + y**2 < 1.:
+    if x**2 + y**2 < 1:
         n = n + 1
-pi = 4.*n/N
-print(f"Approx value of Pi is:  {pi}, error {math.pi - pi}")
+pi = 4*n/N
+print(n)
+print(N)
+print(f"Approx value of Pi is:  {pi}")
