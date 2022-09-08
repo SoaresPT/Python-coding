@@ -1,53 +1,4 @@
 import random
-import math
-
-# 3.1
-
-zander_size = int(input("What is the length of the zander? "))
-if zander_size < 42:
-    print(f"Please release it back to the lake. The zander is {42-zander_size} cm too small.")
-
-# 3.2
-
-cabin_class = input("Type the cabin class: ")
-if cabin_class.upper() == "LUX":
-    print("LUX: upper-deck cabin with a balcony.")
-elif cabin_class.upper() == "A":
-    print("A: above the car deck, equipped with a window.")
-elif cabin_class.upper() == "B":
-    print("B: windowless cabin above the car deck.")
-elif cabin_class.upper() == "C":
-    print("C: windowless cabin below the car deck.")
-else:
-    print("Invalid cabin class")
-
-# 3.3
-gender = input("What is your gender? ")
-hemoglobin = int(input("What is your hemoglobin value (g/l)? "))
-if gender.upper() == "M" or gender.upper() == "MALE":
-    if hemoglobin < 134:
-        print("Your hemoglobin value is low")
-    elif 134 <= hemoglobin <= 167:
-        print("Your hemoglobin value is normal.")
-    else:
-        print("Your hemoglobin value is high.")
-elif gender.upper() == "F" or gender.upper() == "FEMALE":
-    if hemoglobin < 117:
-        print("Your hemoglobin value is low")
-    elif 117 <= hemoglobin <= 155:
-        print("Your hemoglobin value is normal.")
-    else:
-        print("Your hemoglobin value is high.")
-else:
-    print("Error: Can't calculate. Invalid gender typed.")
-
-# 3.4
-year = int(input("Enter a year: "))
-if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
-    print("This is a leap year!")
-else:
-    print("This is not a leap year!")
-
 
 # 4.1
 i = 1
@@ -65,7 +16,6 @@ while True:
     print(f"{inches} inches is the equivalent of {inches*2.54:.2f} cm")
 
 # 4.3
-
 
 smallest_no = None
 highest_no = None
@@ -116,6 +66,8 @@ while no_guesses < 5:
 
 # 4.6
 
+import random
+
 N = int(input("Type the amount of random points you want to generate: "))
 n = 0
 for i in range(N):
@@ -125,6 +77,50 @@ for i in range(N):
     if x**2 + y**2 < 1:
         n = n + 1
 pi = 4*n/N
-print(n)
-print(N)
 print(f"Approx value of Pi is:  {pi}")
+
+# 5.1
+total = 0
+
+roll = int(input("How many dices do you want to roll: "))
+for i in range(roll):
+    rng = random.randint(1, 6)
+    #print(f"Dice #{i+1} rolled {rng}")
+    total += rng
+print(f"The sum is {total}")
+
+# 5.2
+
+l = []
+while True:
+    n = input("Input some numbers: ")
+    if n != "":
+        l.append(int(n))
+    else:
+        break
+l.sort(reverse=True)
+print(f"The five greatest numbers are : {l[:5]}")
+
+# 5.3
+number = int(input("Write a number: "))
+prime = True
+
+if number <= 1:
+    print("Prime numbers must be greater than 1.")
+else:
+    for i in range(2, number):
+        if (number % i) == 0:
+            prime = False
+            break
+    if prime:
+        print(f"{number} is a prime number.")
+    else:
+        print(f"{number} is not a prime number.")
+
+# 5.4
+cities = []
+for i in range(5):
+    cities.append(input("Type a city name: "))
+print("The cities you typed were: ")
+for i in range(len(cities)):
+    print(cities[i])
