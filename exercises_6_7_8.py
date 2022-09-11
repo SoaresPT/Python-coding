@@ -13,8 +13,6 @@ while True:
     print(f"The rolled number is: {rolled_number}")
    
 # 6.2
-import random
-
 def dice_roll(sides: int):
     return random.randint(1, sides)
 
