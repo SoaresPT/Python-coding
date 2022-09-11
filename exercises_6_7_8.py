@@ -23,3 +23,15 @@ while True:
         print(f"The rolled number is: {rolled_number}")
         break
     print(f"The rolled number is: {rolled_number}")
+    
+# 6.3
+def gallon_to_liters(amount: float):
+    return amount*3.78541178
+
+while True:
+    gallon_input = float(input("How many gallons do you wish to convert to liters: "))
+    if gallon_input < 0:
+        print("Negative number typed. Exiting...")
+        break
+    else:
+        print(f"{gallon_input} gallons = {gallon_to_liters(gallon_input):.2f} liters")
