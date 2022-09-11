@@ -70,8 +70,8 @@ p2_size = float(input("Input the size of the pizza #2 in cm: "))
 p2_cost = float(input("Input the price of the pizza #2 in €: "))
 p2_cost_in_m2 = pizza_price(p2_size,p2_cost*10000)
 
-print(f"{p1_size/100}m² of pizza costs : {p1_cost_in_m2:.2f}€")
-print(f"{p2_size/100}m² of pizza costs : {p2_cost_in_m2:.2f}€")
+#print(f"{p1_size/100}m² of pizza #1 costs : {p1_cost_in_m2:.2f}€")
+#print(f"{p2_size/100}m² of pizza #2 costs : {p2_cost_in_m2:.2f}€")
 if pizza_price(p1_size,p1_cost) > pizza_price(p2_size, p2_cost):
     print("Pizza 2 provides better value for the money")
 elif pizza_price(p1_size,p1_cost) < pizza_price(p2_size, p2_cost):
