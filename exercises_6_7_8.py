@@ -35,3 +35,23 @@ while True:
         break
     else:
         print(f"{gallon_input} gallons = {gallon_to_liters(gallon_input):.2f} liters")
+
+# 6.4
+def sum_list(sumList: list):
+    return sum(sumList)
+
+lista = [1,2,3,4,5,6,7,8,9,10]
+print(f"The sum of the list is: {sum_list(lista)}")
+
+# 6.5
+def trim_odd_numbers(list_of_numbers: list):
+    cut_list = []
+    for i in list_of_numbers:
+        if i % 2 == 0:
+            cut_list.append(i)
+    return cut_list
+
+lista = [0,1,2,3,4,5,6,7,8,9,10,11,13,15,16]
+print(f"Original List: {lista}")
+print(f"Cut-down List: {trim_odd_numbers(lista)}")
+
