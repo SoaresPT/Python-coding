@@ -40,6 +40,8 @@ print("List of names:")
 for name in name_set:
     print(name)
 
+# 7.3
+
 icao_dt = {
     "00AK":  "Lowell Field",
     "00AL":  "Epps Airpark",
@@ -82,14 +84,11 @@ icao_dt = {
     "01IA":  "Stender Airport"
 }
 
-def options():
+while True:
     print("Pick an option:")
     print("\t[1] Create new airport")
     print("\t[2] Find information of an existing airport")
     print("\t[3] Exit\n")
-
-while True:
-    options()
     choice = int(input("Type an option: "))
     if choice == 3:
         print("Quitting...")
@@ -103,4 +102,4 @@ while True:
         icao = input("Type the ICAO code: ")
         print(f"{icao_dt.get(icao.upper(), 'Airport not found on the database.')}{chr(10)}")
     else:
-        print("That's not a valid option. Try again...")   
+        print("That's not a valid option. Try again...")
