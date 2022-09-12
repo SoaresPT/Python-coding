@@ -21,3 +21,21 @@ print("-----------------------")
 month = 1
 for key, value in seasons_dct.items():
     print(key, value)
+
+# 7.2
+
+name_set = set()
+while True:
+    name = input("Enter a name: ")
+    if name == "":
+        break
+    else:
+        if name in name_set:
+            print("Existing name")
+        else:
+            print("New name")
+            name_set.add(name)
+print("Empty Line Detected. Exiting...")
+print("List of names:")
+for name in name_set:
+    print(name)
