@@ -11,6 +11,7 @@ elif month in (9, 10, 11):
     print(seasons[2])
 
 # 7.1 - Alternative with dictionary referencing the tuple
+# Wasn't sure if the exercise required us to only use tuples/dictionaries so I did this one extra below as per the teacher recommendations
 
 seasons = ("spring", "summer", "autumn", "winter")
 month = int(input("Type the number of a month: "))
@@ -106,8 +107,11 @@ while True:
     elif choice == 1:
         new_icao = input("Type the new ICAO code: ").upper()
         new_airport = input("Type the new airport name: ")
-        # Should check for existing ICAO? -- Ask teacher on class
-        icao_dt[new_icao] = new_airport
+        if new_icao in icao_dt:
+            print("Sorry, that airport code already exists.")
+        else:
+            icao_dt[new_icao] = new_airport
+            print("Airport saved successfully!")
     elif choice == 2:
         icao = input("Type the ICAO code: ")
         print(f"{icao_dt.get(icao.upper(), 'Airport not found on the database.')}{chr(10)}")
