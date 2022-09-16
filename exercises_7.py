@@ -100,19 +100,19 @@ while True:
     print("\t[1] Create new airport")
     print("\t[2] Find information of an existing airport")
     print("\t[3] Exit\n")
-    choice = int(input("Type an option: "))
-    if choice == 3:
+    choice = input("Type an option: ")
+    if choice == "3":
         print("Quitting...")
         break
-    elif choice == 1:
+    elif choice == "1":
         new_icao = input("Type the new ICAO code: ").upper()
-        new_airport = input("Type the new airport name: ")
         if new_icao in icao_dt:
             print("Sorry, that airport code already exists.")
         else:
+            new_airport = input("Type the new airport name: ")
             icao_dt[new_icao] = new_airport
             print("Airport saved successfully!")
-    elif choice == 2:
+    elif choice == "2":
         icao = input("Type the ICAO code: ")
         print(f"{icao_dt.get(icao.upper(), 'Airport not found on the database.')}{chr(10)}")
     else:
