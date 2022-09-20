@@ -20,7 +20,7 @@ cur = conn.cursor()
 
 # 8.1
 icao = input("Type a ICAO code: ")
-cur.execute("SELECT name, municipality FROM airport WHERE ident= ?",(icao,))
+cur.execute("SELECT name, municipality FROM airport WHERE ident= ?", (icao,))
 
 for name, municipality in cur:
     print(f"Airport: {name}\nLocation: {municipality}\n")
@@ -34,7 +34,6 @@ cur.execute(area_query)
 for row in cur:
     print(row)
 
-
 # 8.3
 icao1 = input("Type the ICAO code of the 1st airport: ")
 icao1_query = f"SELECT latitude_deg, longitude_deg FROM airport WHERE ident = '{icao1}'"
@@ -46,7 +45,7 @@ icao2_query = f"SELECT latitude_deg, longitude_deg FROM airport WHERE ident = '{
 cur.execute(icao2_query)
 for i in cur:
     coordinate2 = i
-print(f"The distance between both airports is: {GD(coordinate1,coordinate2).km} Km.")
+print(f"The distance between both airports is: {GD(coordinate1, coordinate2).km} Km.")
 
 # Close the db connection
 conn.close()
