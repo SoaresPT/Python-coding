@@ -10,8 +10,8 @@ elif month in (6, 7, 8):
 elif month in (9, 10, 11):
     print(seasons[2])
 
-# 7.1 - Alternative with dictionary referencing the tuple
-# Wasn't sure if the exercise required us to only use tuples/dictionaries so I did this one extra below as per the teacher recommendations
+# 7.1 - Alternative with dictionary referencing the tuple. Wasn't sure if the exercise required us to only use
+# tuples/dictionaries. So I did this one extra below as per the teacher recommendations
 
 seasons = ("spring", "summer", "autumn", "winter")
 month = int(input("Type the number of a month: "))
@@ -37,7 +37,7 @@ print(seasons_dct.get(month))
 
 name_set = set()
 while True:
-    name = input("Enter a name: ")
+    name = input("Enter a name: ").capitalize()
     if name == "":
         break
     else:
@@ -92,7 +92,8 @@ icao_dt = {
     "01FA": "Rybolt Ranch Airport",
     "01FL": "Cedar Knoll Flying Ranch Airport",
     "01GE": "The Farm Airport",
-    "01IA": "Stender Airport"
+    "01IA": "Stender Airport",
+    "EFHK": "Helsinki-Vantaa Airport"
 }
 
 while True:
