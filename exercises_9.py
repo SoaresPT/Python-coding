@@ -8,7 +8,7 @@ class Car:
 
 if __name__ == "__main__":
     new_car = Car("ABC-123", 142)
-    print(vars(new_car)) # ?
+    print(vars(new_car)) # Too overkill ?
     print(f"Registration Number : {new_car.registration_number}")
     print(f"Maximum Speed : {new_car.maximum_speed}")
     print(f"Current Speed : {new_car.current_speed}")
