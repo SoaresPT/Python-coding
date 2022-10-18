@@ -49,6 +49,7 @@ if __name__ == "__main__":
                 print(f"{car.registration_number} Distance travelled so far: {car.travelled_distance}")
                 print("Still racing...\n")
     print("\n")
+    # https://stackoverflow.com/a/44201508
     print(f"Reg. Number | Max. Speed | Current Speed | Travelled Distance")
     for car in car_list:
         print("{:^12}|{:^12}|{:^15}|{:^12}".format(car.registration_number,car.maximum_speed,car.current_speed,car.travelled_distance))
