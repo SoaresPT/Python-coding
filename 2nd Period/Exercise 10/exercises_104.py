@@ -28,15 +28,24 @@ class Race:
         self.name = name
         self.km = km
         self.car_list = car_list
+        self.total_hours = 0
     
     def hour_passes(self):
-        pass
+        for car in self.car_list:
+            car.accerelate(random.randint(-10, 15))
+            car.drive(1)
 
     def print_status(self):
-        pass
-
+        print(f"Reg. Number | Max. Speed | Current Speed | Travelled Distance")
+        for car in car_list:
+            print("{:^12}|{:^12}|{:^15}|{:^12}".format(car.registration_number,car.maximum_speed,car.current_speed,car.travelled_distance))
+        print("\n")
+    
     def race_finished(self):
-        pass
+        for car in self.car_list:
+            if car.travelled_distance >= race.km:
+                return True
+        return False
 
 if __name__ == "__main__":
     # append 10 car objects to a list with random max speed
@@ -46,3 +55,18 @@ if __name__ == "__main__":
 
     # Create the race
     race = Race("Grand Demolition Derby", 8000, car_list)
+    while True:
+        if race.total_hours % 10 == 0:
+            race.print_status()
+        race.hour_passes()
+        race.total_hours += 1
+        if race.race_finished():
+            # Find out which car won
+            for car in race.car_list:
+                if car.travelled_distance >= 8000:
+                    winner = car
+            
+            print(f"The race is over! The winner is the car: {winner.registration_number}!! Here are the race results: \n")
+            break
+        
+    race.print_status()
