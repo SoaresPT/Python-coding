@@ -1,4 +1,4 @@
-# 10.2
+# 10.3
 class Elevator:
     
     def __init__(self, bottom_floor: int, top_floor: int):
@@ -43,6 +43,10 @@ class Building:
     def run_elevator(self, no_elevator: int, floor: int):
         self.list_of_elevators[no_elevator-1].go_to_floor(floor)
 
+    def fire_alarm(self):
+        for elevator in self.list_of_elevators:
+            elevator.go_to_floor(1)
+
 if __name__ == "__main__":
     #building with 1-10 floors, 4 elevators
     building = Building(1, 10, 4)
@@ -69,6 +73,12 @@ if __name__ == "__main__":
     print(f"Moving the fourth elevator to the floor 6\n")
     print(f"The second elevator is currently on the floor: {building.list_of_elevators[3].current_floor}\n")
 
+    print("All the elevators are on the following floors: ")
+    for elevator in range(len(building.list_of_elevators)):
+        print(f"The Elevator #{elevator+1} is on the {building.list_of_elevators[elevator].current_floor}")
+    
+    building.fire_alarm()
+    print("\n\nFire alarm detected! Moving all the elevators to the bottom floor...")
     print("All the elevators are on the following floors: ")
     for elevator in range(len(building.list_of_elevators)):
         print(f"The Elevator #{elevator+1} is on the {building.list_of_elevators[elevator].current_floor}")
