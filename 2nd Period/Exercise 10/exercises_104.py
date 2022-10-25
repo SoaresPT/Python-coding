@@ -57,6 +57,7 @@ if __name__ == "__main__":
     race = Race("Grand Demolition Derby", 8000, car_list)
     while True:
         if race.total_hours % 10 == 0:
+            print(f"The race has been going on for {race.total_hours} hours. Here are the current stats: \n")
             race.print_status()
         race.hour_passes()
         race.total_hours += 1
