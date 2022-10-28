@@ -7,16 +7,11 @@ class Car:
         self.travelled_distance = travelled_distance
     
     def accelerate(self, km_h):
-        if km_h < 0:
-            if self.current_speed - km_h <= 0:
-                self.current_speed += km_h
-            else:
-                self.current_speed = 0
-        if km_h > 0:
-            if self.current_speed + km_h <= self.maximum_speed:
-                self.current_speed += km_h
-            else:
-                self.current_speed = self.maximum_speed
+        self.current_speed += km_h
+        if self.current_speed >= self.maximum_speed:
+            self.current_speed = self.maximum_speed
+        elif self.current_speed <= 0:
+            self.current_speed = 0
     
     def drive(self, hours_driven):
         self.travelled_distance += hours_driven * self.current_speed
