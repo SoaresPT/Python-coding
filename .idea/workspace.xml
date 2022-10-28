@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd9d860b-d5b2-4c2f-aed4-a1f0c5cc1fc2" name="Changes" comment="add newer exercises3_4.py">
-      <change afterPath="$PROJECT_DIR$/2nd Period/Exercise 10/exercise10.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2nd Period/Exercise 9/exercise9.py" beforeDir="false" afterPath="$PROJECT_DIR$/2nd Period/Exercise 9/exercise9.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2nd Period/Exercise 10/exercise10.py" beforeDir="false" afterPath="$PROJECT_DIR$/2nd Period/Exercise 10/exercise10.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +92,7 @@
       <workItem from="1663653755604" duration="1598000" />
       <workItem from="1663655455989" duration="5982000" />
       <workItem from="1666937146660" duration="8194000" />
-      <workItem from="1666951582772" duration="4916000" />
+      <workItem from="1666951582772" duration="4986000" />
     </task>
     <task id="LOCAL-00001" summary="add newer exercises3_4.py">
       <created>1662046249450</created>
