@@ -60,14 +60,14 @@ while race:
     for car in car_list:
         if car.travelled_distance >= 10000:
             print(
-                f"{car.registration_number} has reached 10,000 Km. It actually travelled: {car.travelled_distance} Km.")
+                f"\n!! We have a Winner!!\n{car.registration_number} has reached 10,000 Km. It actually travelled: {car.travelled_distance} Km.")
             race = False
             break
         else:
             car.accelerate(random.randint(-10, 15))
             car.drive(1)
 
-print("\n\t\t\t\t\tFinal Race statistics:")
+print("\nFinal Race statistics:")
 # Print list in a nice format
 print(f"Reg. Number | Max. Speed | Current Speed | Travelled Distance")
 for car in car_list:
