@@ -32,7 +32,7 @@ class Race:
     
     def hour_passes(self):
         for car in self.car_list:
-            car.accerelate(random.randint(-10, 15))
+            car.accelerate(random.randint(-10, 15))
             car.drive(1)
 
     def print_status(self):
