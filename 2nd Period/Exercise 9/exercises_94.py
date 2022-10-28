@@ -37,9 +37,8 @@ if __name__ == "__main__":
             else:
                 car.accelerate(random.randint(-10, 15))
                 car.drive(1)
-    print("\n\t\t\t\t\tFinal Race statistics:")
+    print("\nFinal Race statistics:")
     print(f"Reg. Number | Max. Speed | Current Speed | Travelled Distance")
     # https://stackoverflow.com/a/44201508
     for car in car_list:
-        print("{:^12}|{:^12}|{:^15}|{:^12}".format(car.registration_number, car.maximum_speed, car.current_speed,
-                                                   car.travelled_distance))
+        print("{:^12}|{:^12}|{:^15}|{:^12}".format(car.registration_number, car.maximum_speed, car.current_speed,car.travelled_distance))
