@@ -64,7 +64,8 @@ while race:
             race = False
             break
         else:
-            car.accelerate(random.randint(-10, 150))
+            car.accelerate(random.randint(-10, 15))
+            print(f"{car.registration_number}: {car.current_speed}")
             car.drive(1)
 
 print("\n\t\t\t\t\tFinal Race statistics:")
