@@ -66,8 +66,7 @@ if __name__ == "__main__":
                 if car.travelled_distance >= 8000:
                     winner = car
 
-            print(
-                f"The race is over! The winner is the car: {winner.registration_number}!! Here are the race results: \n")
+            print(f"The race is over! The winner is the car: {winner.registration_number}!!\nHere are the race results:")
             break
 
     race.print_status()
