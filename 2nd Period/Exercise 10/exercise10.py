@@ -46,7 +46,7 @@ class Building:
 
     def fire_alarm(self):
         for elevator in self.list_of_elevators:
-            elevator.go_to_floor(1)
+            elevator.go_to_floor(self.bottom_floor)
 
 if __name__ == "__main__":
     # Phase 1
