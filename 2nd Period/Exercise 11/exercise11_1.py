@@ -1,3 +1,4 @@
+# 11.1
 class Book:
     def __init__(self, name, author, page_count) -> None:
         self.name = name
@@ -16,10 +17,13 @@ class Magazine:
         print(f"{self.name} (chief editor {self.chief_editor})")
 
 class Publication(Book, Magazine):
-    pass
+    def __init__(self, name, author, page_count) -> None:
+        super().__init__(name, author, page_count)
 
 if __name__ == "__main__":
     book = Book("Compartment No. 6", "Rosa Liksom", 192)
     book.print_information()
     magazine = Magazine("Donald Duck", "Aki Hyyppä")
     magazine.print_information()
+    pub = Publication("WTF", "MAS?", 1)
+    print(type(pub))
