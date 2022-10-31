@@ -41,7 +41,7 @@ class Race:
 
     def race_finished(self):
         for car in self.car_list:
-            if car.travelled_distance >= race.km:
+            if car.travelled_distance >= self.km:
                 return True
         return False
 
