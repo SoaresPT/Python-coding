@@ -19,6 +19,15 @@ class Car:
     def drive(self, hours_driven):
         self.travelled_distance += hours_driven * self.current_speed
 
+class ElectricCar(Car):
+    def __init__(self, registration_number, maximum_speed, battery_capacity, current_speed=0, travelled_distance=0):
+        super().__init__(registration_number, maximum_speed, current_speed, travelled_distance)
+        self.battery_capacity = battery_capacity
+
+class GasolineCar(Car):
+    def __init__(self, registration_number, maximum_speed, tank_capacity, current_speed=0, travelled_distance=0):
+        super().__init__(registration_number, maximum_speed, current_speed, travelled_distance)
+        self.tank_capacity = tank_capacity
 
 class Race:
     def __init__(self, name: str, km: int, car_list: Car):
@@ -41,32 +50,29 @@ class Race:
 
     def race_finished(self):
         for car in self.car_list:
-            if car.travelled_distance >= race.km:
+            if car.travelled_distance >= self.km:
                 return True
         return False
 
 
 if __name__ == "__main__":
-    # append 10 car objects to a list with random max speed
     car_list = []
-    for i in range(10):
-        car_list.append(Car(f"ABC-{i + 1}", random.randint(100, 200)))
 
-    # Create the race
-    race = Race("Grand Demolition Derby", 8000, car_list)
-    while True:
-        if race.total_hours % 10 == 0:
-            print(f"The race has been going on for {race.total_hours} hours. Here are the current stats: \n")
-            race.print_status()
-        race.hour_passes()
-        race.total_hours += 1
-        if race.race_finished():
-            # Find out which car won
-            for car in race.car_list:
-                if car.travelled_distance >= 8000:
-                    winner = car
+    # Create and Add the electric and gasoline car to the list
+    tesla = ElectricCar("ABC-15", 180, 52.5)
+    car_list.append(tesla)
 
-            print(f"The race is over! The winner is the car: {winner.registration_number}!!\nHere are the race results:")
-            break
+    volkswagen = GasolineCar("ACD-123", 165, 32.3)
+    car_list.append(volkswagen)
 
-    race.print_status()
+    # Make the cars race at random speeds just like previous exercises but with some tweaked values
+    for hour in range(3):
+        for car in car_list:
+            car.accelerate(random.randint(1, car.maximum_speed / 2.5))
+            print(f"{car.registration_number} {car.current_speed}")
+            car.drive(1)
+    
+    print(f"Reg. Number | Max. Speed | Current Speed | Travelled Distance")
+    for car in car_list:
+        print("{:^12}|{:^12}|{:^15}|{:^12}".format(car.registration_number, car.maximum_speed, car.current_speed,
+                                                       car.travelled_distance))
