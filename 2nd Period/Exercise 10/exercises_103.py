@@ -36,7 +36,6 @@ class Building:
         self.no_elevators = no_elevators
         self.list_of_elevators = []
 
-    def create_elevators(self):
         for i in range(self.no_elevators):
             elevator = Elevator(self.bottom_floor, self.top_floor)
             self.list_of_elevators.append(elevator)
@@ -53,8 +52,6 @@ if __name__ == "__main__":
     # building with 1-10 floors, 4 elevators
     building = Building(1, 10, 4)
 
-    # Method to create elevators
-    building.create_elevators()
     print(f"The first elevator is on the floor: {building.list_of_elevators[0].current_floor}")
     print(f"Moving the first elevator to the floor 5\n")
     building.run_elevator(1, 5)
