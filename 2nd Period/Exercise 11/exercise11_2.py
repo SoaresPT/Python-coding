@@ -23,11 +23,13 @@ class ElectricCar(Car):
     def __init__(self, registration_number, maximum_speed, battery_capacity, current_speed=0, travelled_distance=0):
         super().__init__(registration_number, maximum_speed, current_speed, travelled_distance)
         self.battery_capacity = battery_capacity
+        self.type = "Electric"
 
 class GasolineCar(Car):
     def __init__(self, registration_number, maximum_speed, tank_capacity, current_speed=0, travelled_distance=0):
         super().__init__(registration_number, maximum_speed, current_speed, travelled_distance)
         self.tank_capacity = tank_capacity
+        self.type = "Gasoline"
 
 class Race:
     def __init__(self, name: str, km: int, car_list: Car):
@@ -65,14 +67,13 @@ if __name__ == "__main__":
     volkswagen = GasolineCar("ACD-123", 165, 32.3)
     car_list.append(volkswagen)
 
-    # Make the cars race at random speeds just like previous exercises but with some tweaked values
+    # Make the cars race at random speeds just like previous exercises but with some tweaked values to make it more interesting
     for hour in range(3):
         for car in car_list:
             car.accelerate(random.randint(1, car.maximum_speed / 2.5))
-            print(f"{car.registration_number} {car.current_speed}")
             car.drive(1)
     
-    print(f"Reg. Number | Max. Speed | Current Speed | Travelled Distance")
+    print(f"Reg. Number | Max. Speed | Current Speed | Travelled Distance | Car Type")
     for car in car_list:
-        print("{:^12}|{:^12}|{:^15}|{:^12}".format(car.registration_number, car.maximum_speed, car.current_speed,
-                                                       car.travelled_distance))
+        print("{:^12}|{:^12}|{:^15}|{:^20}|{:^10}".format(car.registration_number,  car.maximum_speed, car.current_speed,
+                                                       car.travelled_distance, car.type))
