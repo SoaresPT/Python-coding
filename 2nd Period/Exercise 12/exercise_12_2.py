@@ -1,9 +1,7 @@
 # 12.2
 import requests
 
-## Replace api to api_key (my own)
-api_key = "5068d63bda90d24ffc013ba49d830d73"
-api = "69f9afe03f52ef5c83887fc86dd79d99"
+api = "5068d63bda90d24ffc013ba49d830d73"
 
 while True:
     city = input("Type a city name: ")
