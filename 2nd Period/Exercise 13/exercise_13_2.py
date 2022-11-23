@@ -1,5 +1,16 @@
 from flask import Flask
-from csv import reader, DictReader
+import mysql.connector
+
+
+connection = mysql.connector.connect(
+    #change these to match your info
+    host="127.0.0.1",
+    port= 3306,
+    database="flight_game",
+    user="root",
+    password="ChangeToYourRootPassword!!"
+)
+cursor = connection.cursor()
 
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
@@ -9,38 +20,15 @@ def index():
 
 @app.route('/airport/')
 def prime():
-    return f'Pass a number to the url after prime_number/ to do the tests.'
+    return f'Pass a number to the url after airport/ to do the tests.'
 
 @app.route('/airport/<ICAO>', methods=['GET'])
 def airport_info(ICAO):
-    with open("airports.csv", "r") as airports_file:
-        csv_reader = DictReader(airports_file)
-        for row in csv_reader:
-            if ICAO.upper() == row['ident'].upper():
-                return {"ICAO": row['ident'], "Name": row['name'], "Location": row['iso_country']}
+    sql = f'SELECT ident, NAME, municipality from airport WHERE ident = "{ICAO}"'
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    if(len(results) == 0):
+        return {"ICAO": ICAO, "Name": "Not found", "Municipality": "Not found"}
+    return {"ICAO": results[0][0], "Name": results[0][1], "Municipality": results[0][2]}
 
-"""
-@app.route('/airport/<ICAO>', methods=['GET'])
-def airport_info(ICAO):
-    with open("airports.csv", "r") as airports_file:
-        csv_reader = reader(airports_file)
-        for row in csv_reader:
-            if ICAO.upper() == row[1].upper():
-                return {"ICAO": row[1], "Name": row[3], "Location": row[8]}
-"""
-"""
-@app.route('/airport/<ICAO>', methods=['GET'])
-def airport_info(ICAO):
-    with open("airports.csv", "r") as airports_file:
-        csv_reader = csv.reader(airports_file, delimiter=',')
-        for row in csv_reader:
-            i = 1
-            if ICAO.upper() == row[i].upper():
-                return {"ICAO": row[1], "Name": row[3], "Location": row[8], "I": i}
-                #return str(row)
-            else:
-                i+= 1
-        return "Not found"
-"""    
-app.debug = True        
 app.run(host='0.0.0.0', port=5000)
