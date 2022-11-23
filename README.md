@@ -4,4 +4,4 @@ Exercises https://github.com/vesavvo/Python_Ohjelmistoteema/blob/main/English/Ex
 
 Project https://github.com/vesavvo/Python_Ohjelmistoteema/blob/main/English/Project/01_Preliminary_Project_Assignment.md#preliminary-project-assignment
 
-Final Project https://github.com/vesavvo/Python_Ohjelmistoteema/blob/main/English/Project/02_Final_Project_Assignment.md
+Final Project https://github.com/vesavvo/Python_Ohjelmistoteema/blob/main/English/Project/02_Final_Project_Assignment.md#final-project-assignment
